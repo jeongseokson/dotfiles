@@ -1,0 +1,11 @@
+set show-all-if-ambiguous on
+set completion-ignore-case on
+
+"\C-r": reverse-search-history
+"\C-]": forward-search-history
+
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
