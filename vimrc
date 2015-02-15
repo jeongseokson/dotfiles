@@ -142,6 +142,9 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
+" Filetype specific indentaiton
+autocmd FileType tex,plaintex setlocal sw=2 ts=2
+
 " Linebreak on 500 characters
 set lbr
 set tw=500
@@ -275,8 +278,8 @@ map <leader>pp :setlocal paste!<cr>
 " Highlight trailing whitespaces
 match ErrorMsg '\s\+$'
 
-" Set column width 80
-set cc=80
+" Set column width
+autocmd FileType c,cpp,java,python,javascript,ruby,vim,bash setlocal cc=80
 
 " Line number
 set nu
@@ -380,6 +383,10 @@ Plugin 'Syntastic'
 Plugin 'bling/vim-airline'
 " Always show the status line
 set laststatus=2
+
+Plugin 'lervag/vim-latex'
+let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat='pdf'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
