@@ -288,6 +288,20 @@ set nu
 set undofile
 set undodir=~/.vim/undodir
 
+" Tags file upward search
+set tags+=tags;~
+
+" cscope.out file search
+function! LoadCscope()
+  let db = findfile("cscope.out", ".;")
+  if (!empty(db))
+    let path = strpart(db, 0, match(db, "/cscope.out$"))
+    set nocscopeverbose " suppress 'duplicate connection' error
+    exe "cs add " . db . " " . path
+    set cscopeverbose
+  endif
+endfunction
+au BufEnter /* call LoadCscope()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
@@ -379,6 +393,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType")
 Plugin 'The-NERD-Commenter'
 
 Plugin 'Syntastic'
+let g:syntastic_cpp_compiler = "g++"
+let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Wextra -Wpedantic"
 
 Plugin 'bling/vim-airline'
 " Always show the status line
@@ -387,6 +403,8 @@ set laststatus=2
 Plugin 'lervag/vim-latex'
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
+
+Plugin 'nvie/vim-flake8'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
