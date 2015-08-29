@@ -1,8 +1,8 @@
 [user]
-	name = Jeongseok Son
-	email = jeongseok.son@gmail.com
+    name = Jeongseok Son
+    email = jeongseok.son@gmail.com
 [credential]
-	helper = cache --timeout=3600
+    helper = cache --timeout=3600
 [alias]
     co = checkout
     st = status
