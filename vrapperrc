@@ -1,0 +1,6 @@
+set smartindent
+set autoindent
+set smartcase
+set hlsearch
+set incsearch
+set expandtab
