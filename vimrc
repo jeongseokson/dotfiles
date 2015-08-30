@@ -374,6 +374,9 @@ function! LoadCscope()
 endfunction
 au BufEnter /* call LoadCscope()
 
+map <F6> :!g++ -g -O2 -std=gnu++11 -static % -o %<<cr>
+map <F5> :!./%< < input<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
