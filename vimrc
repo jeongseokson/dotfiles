@@ -139,8 +139,8 @@ Plugin 'bling/vim-airline'
 " Always show the status line
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_enable_branch     = 1
-let g:airline_enable_syntastic  = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#syntastic#enabled = 1
 
 Plugin 'lervag/vim-latex'
 let g:tex_flavor='latex'
