@@ -92,6 +92,9 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 
+# vi to vim
+alias vi=vim
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -112,5 +115,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# tmux commands auto completion
-source ~/.tmux.completion.bash
+# source auto completion scripts
+source ~/.bash/completion/*
