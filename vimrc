@@ -141,10 +141,12 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
+"let g:airline_powerline_fonts = 1
 
 Plugin 'lervag/vim-latex'
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
+autocmd FileType tex,plaintex setlocal sw=2 ts=2
 
 Plugin 'nvie/vim-flake8'
 
@@ -156,6 +158,13 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 Plugin 'honza/vim-snippets'
+
+"Plugin 'Superbil/llvm.vim'
+augroup filetype
+    au! BufRead,BufNewFile *.ll set filetype=llvm
+augroup END
+autocmd FileType llvm setlocal sw=2 ts=2
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -219,9 +228,6 @@ set smarttab
 " 1 tab == 4 spaces
 set shiftwidth=4
 set tabstop=4
-
-" Filetype specific indentaiton
-autocmd FileType tex,plaintex setlocal sw=2 ts=2
 
 " Linebreak on 500 characters
 set lbr

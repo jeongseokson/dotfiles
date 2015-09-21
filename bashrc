@@ -117,3 +117,15 @@ fi
 
 # source auto completion scripts
 source ~/.bash/completion/*
+
+# set vim as default editor, if exists
+command -v vim > /dev/null 2>&1 && {
+    export EDITOR=vim
+}
+
+# UIUC EWS-speicfic setting
+if [[ `hostname -d` = "ews.illinois.edu" ]]; then
+    module load gcc/4.8.2
+    # for CS426 LLVM MP
+    export PATH=/class/cs426/llvm/llvm-3.7.0.obj/Release+Asserts/bin:$PATH
+fi
