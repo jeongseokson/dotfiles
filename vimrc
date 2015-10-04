@@ -141,7 +141,6 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
-"let g:airline_powerline_fonts = 1
 
 Plugin 'lervag/vim-latex'
 let g:tex_flavor='latex'
@@ -166,6 +165,12 @@ augroup END
 autocmd FileType llvm setlocal sw=2 ts=2
 
 Plugin 'rust-lang/rust.vim'
+
+"Plugin 'Valloric/YouCompleteMe'
+"let g:ycm_confirm_extra_conf = 0
+"let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
+"let g:ycm_seed_identifiers_with_syntax = 1
+"let g:ycm_autoclose_preview_window_after_completion = 1
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
