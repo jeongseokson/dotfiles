@@ -194,6 +194,7 @@ filetype plugin indent on    " required
 " Enable syntax highlighting
 syntax enable
 
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set t_Co=256
 colorscheme Tomorrow-Night-Bright
 set background=dark
