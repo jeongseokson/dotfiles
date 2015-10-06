@@ -129,3 +129,8 @@ if [[ `hostname -d` = "ews.illinois.edu" ]]; then
     # for CS426 LLVM MP
     export PATH=/class/cs426/llvm/llvm-3.7.0.obj/Release+Asserts/bin:$PATH
 fi
+
+# alias vim to nvim, if exists
+command -v nvim >/dev/null 2>&1 && {
+    alias vim="nvim"
+}
