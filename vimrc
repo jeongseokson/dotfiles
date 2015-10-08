@@ -126,15 +126,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType")
 
 Plugin 'The-NERD-Commenter'
 
-Plugin 'Syntastic'
-let g:syntastic_cpp_compiler = "g++"
-let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Wextra -Wpedantic"
-let g:syntastic_mode_map = {
-    \ "mode": "active",
-    \ "active_filetypes": [],
-    \ "passive_filetypes": [""] }
-
-
 Plugin 'bling/vim-airline'
 " Always show the status line
 set laststatus=2
@@ -171,6 +162,9 @@ Plugin 'rust-lang/rust.vim'
 "let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
 "let g:ycm_seed_identifiers_with_syntax = 1
 "let g:ycm_autoclose_preview_window_after_completion = 1
+
+Plugin 'benekastah/Neomake'
+autocmd! BufWritePost * Neomake
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
