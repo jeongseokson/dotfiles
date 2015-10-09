@@ -32,6 +32,9 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
+# initialize git submodules
+git submodule update --init --recursive
+
 # Neovim configuration
 mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
 ln -s ~/.vim $XDG_CONFIG_HOME/nvim
