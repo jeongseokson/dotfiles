@@ -8,6 +8,7 @@
 " Sections:
 "    -> General
 "    -> VIM user interface
+"    -> Plugins
 "    -> Colors and Fonts
 "    -> Files and backups
 "    -> Text, tab and indent related
@@ -17,7 +18,6 @@
 "    -> Spell checking
 "    -> Misc
 "    -> Helper functions
-"    -> Plugins
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -34,6 +34,9 @@ filetype indent on
 
 " Set to auto read when a file is changed from the outside
 set autoread
+
+" Map leader key to comma
+let mapleader = ","
 
 " Fast saving
 nmap <leader>w :w!<cr>
