@@ -129,12 +129,14 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType")
 
 Plugin 'The-NERD-Commenter'
 
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " Always show the status line
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
+"let g:airline_powerline_fonts = 1
 
 Plugin 'lervag/vim-latex'
 let g:tex_flavor='latex'
