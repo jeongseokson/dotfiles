@@ -154,7 +154,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 Plugin 'honza/vim-snippets'
 
-"Plugin 'Superbil/llvm.vim'
+Plugin 'Superbil/llvm.vim'
 augroup filetype
     au! BufRead,BufNewFile *.ll set filetype=llvm
 augroup END
