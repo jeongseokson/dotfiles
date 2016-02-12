@@ -154,12 +154,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 Plugin 'honza/vim-snippets'
 
-Plugin 'Superbil/llvm.vim'
-augroup filetype
-    au! BufRead,BufNewFile *.ll set filetype=llvm
-augroup END
-autocmd FileType llvm setlocal sw=2 ts=2
-
 Plugin 'rust-lang/rust.vim'
 
 "Plugin 'Valloric/YouCompleteMe'
