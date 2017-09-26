@@ -56,11 +56,7 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
+export PS1="\[\033[1;34m\]\!\[\033[0m\] \[\033[1;35m\]\u\[\033[0m\]:\[\033[1;35m\]\W\[\033[0m\]$ "
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
@@ -88,6 +84,7 @@ fi
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
+alias ls='ls -Gp'
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
@@ -123,13 +120,6 @@ source ~/.bash/completion/*
 command -v vim > /dev/null 2>&1 && {
     export EDITOR=vim
 }
-
-# UIUC EWS-speicfic setting
-if [[ `hostname -d` = "ews.illinois.edu" ]]; then
-    module load gcc/4.8.2
-    # for CS426 LLVM MP
-    export PATH=/class/cs426/llvm/llvm-3.7.0.obj/Release+Asserts/bin:$PATH
-fi
 
 # alias vim to nvim, if exists
 command -v nvim >/dev/null 2>&1 && {

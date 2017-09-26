@@ -82,9 +82,6 @@ set hlsearch
 " Makes search act like search in modern browsers
 set incsearch
 
-" Don't redraw while executing macros (good performance config)
-set lazyredraw
-
 " For regular expressions turn magic on
 set magic
 
@@ -189,7 +186,7 @@ syntax enable
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set t_Co=256
-colorscheme Tomorrow-Night-Bright
+colorscheme Tomorrow-Night
 set background=dark
 
 
