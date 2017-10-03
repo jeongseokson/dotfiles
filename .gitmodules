@@ -1,3 +1,7 @@
 [submodule "vim/bundle/Vundle.vim"]
 	path = vim/bundle/Vundle.vim
 	url = https://github.com/gmarik/Vundle.vim.git
+[submodule "bash/liquidprompt"]
+	path = bash/liquidprompt
+	url = https://github.com/nojhan/liquidprompt
+	branch = master
