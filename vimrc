@@ -144,11 +144,6 @@ Plugin 'nvie/vim-flake8'
 
 Plugin 'chriskempson/vim-tomorrow-theme'
 
-Plugin 'SirVer/ultisnips'
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
 Plugin 'honza/vim-snippets'
 
 Plugin 'rust-lang/rust.vim'
