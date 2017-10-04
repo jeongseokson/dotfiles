@@ -82,6 +82,9 @@ set hlsearch
 " Makes search act like search in modern browsers
 set incsearch
 
+" Enable lazy redarw for performance improvement
+set lazyredraw
+
 " For regular expressions turn magic on
 set magic
 
