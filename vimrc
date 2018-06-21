@@ -151,6 +151,8 @@ Plugin 'honza/vim-snippets'
 
 Plugin 'rust-lang/rust.vim'
 
+Plugin 'mlr-msft/vim-loves-dafny'
+
 "Plugin 'Valloric/YouCompleteMe'
 "let g:ycm_confirm_extra_conf = 0
 "let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
