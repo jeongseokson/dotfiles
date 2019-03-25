@@ -71,41 +71,43 @@ DEF="\033[0;39m"
 BDEF="\033[1;39m"
 
 git_branch () {
-  local git_status="$(git status 2> /dev/null)"
-  local on_branch="On branch ([^${IFS}]*)"
-  local on_commit="HEAD detached at ([^${IFS}]*)"
+    local git_status="$(git status 2> /dev/null)"
+    local on_branch="On branch ([^${IFS}]*)"
+    local on_commit="HEAD detached at ([^${IFS}]*)"
 
-  if [[ $git_status =~ $on_branch ]]; then
-    local branch=${BASH_REMATCH[1]}
-    echo "$branch"
-  elif [[ $git_status =~ $on_commit ]]; then
-    local commit=${BASH_REMATCH[1]}
-    echo "$commit"
-  fi
+    if [[ $git_status =~ $on_branch ]]; then
+        local branch=${BASH_REMATCH[1]}
+        echo "$branch"
+    elif [[ $git_status =~ $on_commit ]]; then
+        local commit=${BASH_REMATCH[1]}
+        echo "$commit"
+    fi
 }
 
 git_color () {
-  local git_status="$(git status 2> /dev/null)"
+    local git_status="$(git status 2> /dev/null)"
 
-  if [[ ! $git_status =~ "working tree clean" ]]; then
-    echo -e $BRED
-  elif [[ $git_status =~ "Your branch is ahead of" ]]; then
-    echo -e $BROWN
-  elif [[ $git_status =~ "nothing to commit" ]]; then
-    echo -e $BGREEN
-  else
-    echo -e $BPURPLE
-  fi
+    if [[ ! $git_status =~ "working tree clean" ]]; then
+        echo -e $RED
+    elif [[ $git_status =~ "Your branch is ahead of" ]]; then
+        echo -e $BROWN
+    elif [[ $git_status =~ "nothing to commit" ]]; then
+        echo -e $GREEN
+    else
+        echo -e $PURPLE
+    fi
 }
 
 PS1="┌─"
 PS1+="[\`if [ \$? = 0 ]; then echo '\[$GREEN\]✔\[$NC\]'; else echo '\[$RED\]✘\[$NC\]'; fi\`]──"
 PS1+="[\[$BDEF\]\u\[$NC\]\[$BDEF\]@\H\[$NC\]]──"
-PS1+="[\[$BBLUE\]\W\[$NC\]]"
-PS1+="\`[ \j -gt 0 ] && echo '──[\[$YELLOW\]\j jobs\[$NC\]]'\`"
+PS1+="[\[$BLUE\]\W\[$NC\]]"
+PS1+="\`[ \j -gt 0 ] && echo '──[\[$BROWN\]\j jobs\[$NC\]]'\`"
 PS1+="\`if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then echo '──[\['\$(git_color)'\]'\$(git_branch)'\[$NC\]]'; fi\`"
+PS1+="\`if tmux ls > /dev/null 2>&1; then echo '──[\[$CYAN\]'\$(tmux ls 2> /dev/null | wc -l) sessions'\[$NC\]]'; fi\`"
 PS1+="\n└───▶ "
 PS1="\[\033[G\]$PS1"
+
 # pip
 export PATH=$PATH:$HOME/.local/bin
 
