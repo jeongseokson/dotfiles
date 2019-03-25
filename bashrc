@@ -117,5 +117,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # editor setting
-export VISUAL=vim
-export EDITOR="$VISUAL"
+command -v vim > /dev/null 2>&1 && {
+    export VISUAL=vim
+    export EDITOR="$VISUAL"
+    alias vi="vim"
+}
+command -v nvim >/dev/null 2>&1 && {
+    alias vim="nvim"
+}
