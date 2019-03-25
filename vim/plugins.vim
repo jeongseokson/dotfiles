@@ -11,5 +11,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'bling/vim-bufferline'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
+Plug 'neomake/neomake'
 
 call plug#end()
+
+call neomake#configure#automake('w')
