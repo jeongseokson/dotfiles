@@ -136,7 +136,12 @@ endfunction
 au BufEnter /* call LoadCscope()
 
 " nvim
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+if has('nvim')
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+    au TermOpen * setlocal nonumber norelativenumber
+endif
+
+tnoremap <Esc> <C-\><C-n>
 
 inoremap <C-U> <C-G>u<C-U>
 
@@ -155,3 +160,5 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+
+nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
