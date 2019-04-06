@@ -52,7 +52,7 @@ set magic
 set showmatch
 
 set noerrorbells
-set novisualbell
+set visualbell
 set t_vb=
 set tm=500
 

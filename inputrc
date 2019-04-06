@@ -12,3 +12,5 @@ set completion-ignore-case on
 
 "\eOC": forward-word
 "\eOD": backward-word
+
+set bell-style visible
